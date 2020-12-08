@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Card = () => {
+export const Card = ({ user }) => {
   return (
     <div className="card">
-      <img src={""} className="card-img-top" alt={""}></img>
+      <img
+        src={user.avatar_url}
+        className="card-img-top"
+        alt={user.login}
+      ></img>
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <Link to={"/profile/" + "react"} className="btn btn-primary">
+        <h5 className="card-title">{user.login}</h5>
+        <Link to={"/profile/" + user.login} className="btn btn-primary">
           Открыть
         </Link>
       </div>
